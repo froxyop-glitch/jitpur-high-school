@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jitpur High School (H.S.) — Alipurduar, West Bengal</title>
+<meta name="description" content="Official website of Jitpur High School (H.S.) — admissions, academics, facilities and notices.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEAD9;
+    --paper-2:#E4E0C8;
+    --ink:#1C2420;
+    --ink-soft:#4A5048;
+    --deep:#173B44;
+    --deep-2:#0F2A31;
+    --marigold:#E39A2E;
+    --marigold-dark:#C77F1E;
+    --brick:#AE4A30;
+    --line:#C6BF9F;
+    --paper-rgb:237,234,217;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans',sans-serif;
+    font-size:16px;
+    line-height:1.55;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0;
+    color:var(--deep-2);
+  }
+  .mono{
+    font-family:'IBM Plex Mono',monospace;
+    letter-spacing:.04em;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px;}
+  section{position:relative;}
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- top notice strip ---------- */
+  .notice-strip{
+    background:var(--deep-2);
+    color:var(--paper);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:.05em;
+    padding:7px 0;
+    overflow:hidden;
+    white-space:nowrap;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .notice-strip .track{
+    display:inline-block;
+    padding-left:100%;
+    animation:ticker 22s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce){ .notice-strip .track{animation:none;padding-left:24px;} }
+  @keyframes ticker{ from{transform:translateX(0);} to{transform:translateX(-100%);} }
+  .notice-strip b{color:var(--marigold);}
+
+  /* ---------- header / nav ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(var(--paper-rgb),.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:14px;padding-bottom:14px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .crest{
+    width:42px;height:42px;border-radius:50%;
+    background:conic-gradient(from 180deg, var(--deep) 0 25%, var(--deep-2) 0 50%, var(--deep) 0 75%, var(--deep-2) 0 100%);
+    display:flex;align-items:center;justify-content:center;
+    border:2px solid var(--marigold);
+    flex:none;
+  }
+  .crest span{color:var(--marigold);font-family:'Fraunces',serif;font-weight:700;font-size:16px;}
+  .brand-text{line-height:1.15;}
+  .brand-text .name{font-family:'Fraunces',serif;font-weight:600;font-size:18px;color:var(--deep-2);}
+  .brand-text .sub{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:var(--ink-soft);text-transform:uppercase;}
+  .navlinks{display:flex;align-items:center;gap:26px;}
+  .navlinks a{
+    font-size:14.5px;font-weight:500;text-decoration:none;color:var(--ink);
+    position:relative;padding:4px 0;
+  }
+  .navlinks a::after{
+    content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--marigold);
+    transition:width .25s ease;
+  }
+  .navlinks a:hover::after{width:100%;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Work Sans',sans-serif;font-weight:600;font-size:14px;
+    padding:11px 20px;border-radius:var(--radius);text-decoration:none;
+    border:1px solid transparent;cursor:pointer;
+  }
+  .btn-primary{background:var(--marigold);color:var(--deep-2);border-color:var(--marigold-dark);}
+  .btn-primary:hover{background:var(--marigold-dark);}
+  .btn-outline{background:transparent;color:var(--paper);border-color:rgba(255,255,255,.5);}
+  .btn-outline:hover{background:rgba(255,255,255,.12);}
+  .btn-ghost{background:transparent;color:var(--deep-2);border-color:var(--deep-2);}
+  .btn-ghost:hover{background:var(--deep-2);color:var(--paper);}
+  .navlinks .btn{padding:9px 16px;font-size:13.5px;}
+  .navtoggle{display:none;}
+
+  /* ---------- hero (signboard) ---------- */
+  .hero{
+    background:
+      repeating-linear-gradient(0deg, rgba(0,0,0,.08) 0 2px, transparent 2px 42px),
+      repeating-linear-gradient(90deg, rgba(0,0,0,.05) 0 2px, transparent 2px 84px),
+      linear-gradient(180deg, var(--deep) 0%, var(--deep-2) 100%);
+    color:var(--paper);
+    padding:76px 0 0;
+    overflow:hidden;
+  }
+  .hero-inner{
+    display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end;
+    padding-bottom:56px;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--marigold);
+    display:flex;align-items:center;gap:10px;margin-bottom:18px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--marigold);}
+  .hero h1{
+    font-size:clamp(38px,6vw,66px);
+    color:var(--paper);
+    line-height:1.02;
+    text-shadow:0 2px 0 rgba(0,0,0,.25);
+  }
+  .hero h1 em{
+    font-style:normal;color:var(--marigold);
+  }
+  .hero-tagline{
+    margin-top:18px;max-width:480px;font-size:16.5px;color:rgba(237,234,217,.82);
+  }
+  .hero-bengali{
+    margin-top:10px;font-family:'Fraunces',serif;font-style:italic;font-size:15px;
+    color:rgba(227,154,46,.85);
+  }
+  .hero-actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap;}
+  .hero-plate{
+    background:rgba(237,234,217,.06);
+    border:1px solid rgba(237,234,217,.18);
+    padding:22px;
+    border-radius:var(--radius);
+  }
+  .hero-plate .mono{font-size:11.5px;color:var(--marigold);letter-spacing:.1em;text-transform:uppercase;}
+  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px;margin-top:14px;}
+  .stat-grid .num{font-family:'Fraunces',serif;font-size:26px;color:var(--paper);}
+  .stat-grid .lbl{font-size:12px;color:rgba(237,234,217,.65);}
+
+  /* garland / bunting divider */
+  .bunting{
+    display:flex;height:34px;
+    transform:translateY(2px);
+  }
+  .bunting svg{display:block;width:100%;height:34px;}
+  @media (prefers-reduced-motion: no-preference){
+    .bunting{animation:sway 5s ease-in-out infinite;}
+  }
+  @keyframes sway{ 0%,100%{transform:translateY(2px) rotate(0.1deg);} 50%{transform:translateY(5px) rotate(-0.1deg);} }
+
+  /* ---------- section headers ---------- */
+  .sec-head{max-width:640px;margin:0 auto 44px;text-align:left;}
+  .sec-eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--brick);margin-bottom:10px;display:block;
+  }
+  .sec-head h2{font-size:clamp(26px,3.4vw,36px);}
+  .sec-head p{color:var(--ink-soft);margin-top:12px;font-size:15.5px;}
+
+  section.pad{padding:80px 0;}
+  .band-line{border-top:1px solid var(--line);}
+
+  /* ---------- registration banner ---------- */
+  .register-band{
+    background:var(--brick);
+    color:var(--paper);
+    padding:44px 0;
+  }
+  .register-inner{
+    display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  }
+  .register-inner h3{color:var(--paper);font-size:24px;}
+  .register-inner p{margin:8px 0 0;color:rgba(237,234,217,.85);font-size:14.5px;max-width:480px;}
+  .btn-onbrick{background:var(--paper);color:var(--brick);border-color:var(--paper);font-weight:700;}
+  .btn-onbrick:hover{background:var(--deep-2);color:var(--paper);border-color:var(--deep-2);}
+
+  /* ---------- about ---------- */
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start;}
+  .about-figure{
+    aspect-ratio:4/5;border-radius:var(--radius);
+    background:
+      radial-gradient(circle at 30% 20%, rgba(227,154,46,.35), transparent 55%),
+      linear-gradient(160deg, var(--deep) 0%, var(--deep-2) 70%);
+    position:relative;overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .about-figure::before{
+    content:"জি";
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-size:180px;color:rgba(237,234,217,.08);
+  }
+  .about-figure .cap{
+    position:absolute;bottom:0;left:0;right:0;padding:16px 18px;
+    background:linear-gradient(0deg, rgba(15,42,49,.9), transparent);
+    color:var(--paper);font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;
+  }
+  .about-body p{margin:0 0 16px;color:var(--ink-soft);font-size:15.5px;}
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px;}
+  .pillar{border-top:2px solid var(--marigold);padding-top:12px;}
+  .pillar h4{font-family:'Fraunces',serif;font-size:16px;margin:0 0 6px;color:var(--deep-2);}
+  .pillar p{margin:0;font-size:13.5px;color:var(--ink-soft);}
+
+  /* ---------- academics: chalkboard ---------- */
+  .chalk-section{
+    background:var(--deep-2);
+    color:var(--paper);
+  }
+  .chalk-section .sec-eyebrow{color:var(--marigold);}
+  .chalk-section .sec-head h2{color:var(--paper);}
+  .chalk-section .sec-head p{color:rgba(237,234,217,.7);}
+  .levels{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .level-card{
+    background:rgba(237,234,217,.04);
+    border:1px dashed rgba(237,234,217,.3);
+    border-radius:var(--radius);
+    padding:26px 22px;
+  }
+  .level-card .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--marigold);text-transform:uppercase;}
+  .level-card h3{font-family:'Fraunces',serif;font-size:21px;color:var(--paper);margin-top:8px;}
+  .level-card ul{margin:14px 0 0;padding-left:18px;color:rgba(237,234,217,.75);font-size:13.8px;line-height:1.7;}
+  .level-card ul li::marker{color:var(--marigold);}
+
+  /* ---------- facilities ---------- */
+  .facility-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .facility{background:var(--paper);padding:28px 22px;}
+  .facility .icon{width:34px;height:34px;color:var(--brick);margin-bottom:14px;}
+  .facility h4{font-family:'Fraunces',serif;font-size:16.5px;color:var(--deep-2);margin:0 0 6px;}
+  .facility p{margin:0;font-size:13.5px;color:var(--ink-soft);}
+
+  /* ---------- notice board ---------- */
+  .board{
+    background:
+      repeating-linear-gradient(45deg, rgba(174,74,48,.06) 0 2px, transparent 2px 14px),
+      var(--paper-2);
+    border:1px solid var(--line);
+    padding:36px;
+    border-radius:var(--radius);
+  }
+  .board-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .pin-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:20px 18px 22px;
+    position:relative;
+    box-shadow:0 6px 14px rgba(23,59,68,.08);
+    transform:rotate(var(--r,0deg));
+  }
+  .pin-card:nth-child(1){--r:-1.2deg;}
+  .pin-card:nth-child(2){--r:0.8deg;}
+  .pin-card:nth-child(3){--r:-0.5deg;}
+  .pin-card::before{
+    content:"";position:absolute;top:-7px;left:50%;transform:translateX(-50%);
+    width:14px;height:14px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #f0c56a, var(--marigold-dark));
+    box-shadow:0 3px 4px rgba(0,0,0,.25);
+  }
+  .pin-card .date{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--brick);letter-spacing:.05em;}
+  .pin-card h4{font-family:'Fraunces',serif;font-size:16px;margin:8px 0 8px;color:var(--deep-2);}
+  .pin-card p{margin:0;font-size:13.5px;color:var(--ink-soft);}
+  .pin-card a.inline-link{color:var(--brick);font-weight:600;text-decoration:underline;}
+
+  /* ---------- gallery ---------- */
+  .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:10px;}
+  .gallery-grid .g1{grid-column:span 2;grid-row:span 2;}
+  .g-tile{
+    border-radius:var(--radius);position:relative;overflow:hidden;
+    display:flex;align-items:flex-end;padding:14px;
+  }
+  .g-tile span{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(237,234,217,.9);
+    background:rgba(15,42,49,.55);padding:4px 8px;border-radius:2px;
+  }
+  .g-tile.t1{background:linear-gradient(150deg,#1c5361,#0f2a31);}
+  .g-tile.t2{background:linear-gradient(150deg,#c77f1e,#7a4c15);}
+  .g-tile.t3{background:linear-gradient(150deg,#8a3826,#4c1e14);}
+  .g-tile.t4{background:linear-gradient(150deg,#2e6b5b,#12332a);}
+  .g-tile.t5{background:linear-gradient(150deg,#3a4d3f,#1c2420);}
+
+  /* ---------- contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  .info-row{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);}
+  .info-row .k{width:120px;flex:none;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--brick);text-transform:uppercase;letter-spacing:.06em;padding-top:2px;}
+  .info-row .v{font-size:15px;color:var(--ink);}
+  .map-box{
+    aspect-ratio:4/3;border:1px solid var(--line);border-radius:var(--radius);
+    background:
+      linear-gradient(0deg, rgba(23,59,68,.05) 1px, transparent 1px) 0 0/28px 28px,
+      linear-gradient(90deg, rgba(23,59,68,.05) 1px, transparent 1px) 0 0/28px 28px,
+      var(--paper-2);
+    position:relative;display:flex;align-items:center;justify-content:center;
+  }
+  .map-pin{
+    width:16px;height:16px;background:var(--brick);border-radius:50% 50% 50% 0;
+    transform:rotate(-45deg);box-shadow:0 4px 8px rgba(0,0,0,.25);
+  }
+  .map-cap{position:absolute;bottom:14px;left:14px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-soft);}
+
+  footer{background:var(--deep-2);color:rgba(237,234,217,.75);padding:48px 0 26px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(237,234,217,.12);}
+  footer h5{color:var(--paper);font-family:'Fraunces',serif;font-size:15px;margin:0 0 14px;}
+  footer ul{list-style:none;margin:0;padding:0;}
+  footer li{margin-bottom:9px;font-size:13.8px;}
+  footer a{text-decoration:none;color:rgba(237,234,217,.75);}
+  footer a:hover{color:var(--marigold);}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:22px;font-size:12px;color:rgba(237,234,217,.5);flex-wrap:wrap;gap:10px;}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:920px){
+    .hero-inner{grid-template-columns:1fr;}
+    .about-grid, .contact-grid{grid-template-columns:1fr;}
+    .levels{grid-template-columns:1fr;}
+    .facility-grid{grid-template-columns:repeat(2,1fr);}
+    .board-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .gallery-grid .g1{grid-column:span 2;}
+    .foot-grid{grid-template-columns:1fr;gap:26px;}
+  }
+  @media (max-width:760px){
+    .navlinks{
+      position:fixed;inset:64px 0 0 0;background:var(--paper);
+      flex-direction:column;align-items:flex-start;padding:28px;gap:20px;
+      transform:translateX(100%);transition:transform .3s ease;border-top:1px solid var(--line);
+    }
+    .navlinks.open{transform:translateX(0);}
+    .navtoggle{
+      display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;
+    }
+    .navtoggle span{width:22px;height:2px;background:var(--deep-2);}
+    .register-inner{flex-direction:column;align-items:flex-start;}
+  }
+  @media (max-width:600px){
+    .facility-grid{grid-template-columns:1fr 1fr;}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="notice-strip">
+  <div class="track mono">
+    <b>NOTICE&nbsp;·</b>&nbsp; Admissions for the new academic session are now open — register online in minutes &nbsp;&nbsp;•&nbsp;&nbsp;
+    <b>NOTICE&nbsp;·</b>&nbsp; Grade 11 Arts, Commerce &amp; Science seats filling fast &nbsp;&nbsp;•&nbsp;&nbsp;
+    <b>NOTICE&nbsp;·</b>&nbsp; Parent-Teacher meeting notices posted on the board below &nbsp;&nbsp;•&nbsp;&nbsp;
+  </div>
+</div>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">
+      <div class="crest"><span>JHS</span></div>
+      <div class="brand-text">
+        <div class="name">Jitpur High School</div>
+        <div class="sub">Higher Secondary · Alipurduar</div>
+      </div>
+    </div>
+    <div class="navlinks" id="navlinks">
+      <a href="#about">About</a>
+      <a href="#academics">Academics</a>
+      <a href="#facilities">Facilities</a>
+      <a href="#notices">Notices</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-ghost" href="https://school-students-data.vercel.app" target="_blank" rel="noopener">Student Registration</a>
+    </div>
+    <button class="navtoggle" id="navtoggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="reveal in">
+        <div class="eyebrow">Lichutala, Alipurduar · Higher Secondary School</div>
+        <h1>Jitpur High<br>School <em>(H.S.)</em></h1>
+        <p class="hero-tagline">A place where every student is known by name. From Class 5 through Higher Secondary, we build a foundation of discipline, curiosity and character.</p>
+        <p class="hero-bengali">"শিক্ষাই শক্তি" — Knowledge is strength.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://school-students-data.vercel.app" target="_blank" rel="noopener">Open Student Registration ↗</a>
+          <a class="btn btn-outline" href="#about">Learn about the school</a>
+        </div>
+      </div>
+      <div class="hero-plate reveal in">
+        <div class="mono">School at a glance</div>
+        <div class="stat-grid">
+          <div><div class="num">5–12</div><div class="lbl">Class 5 to Grade 12</div></div>
+          <div><div class="num">3</div><div class="lbl">H.S. streams offered</div></div>
+          <div><div class="num">1</div><div class="lbl">Campus, Lichutala</div></div>
+          <div><div class="num">Open</div><div class="lbl">Admissions status</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bunting" aria-hidden="true">
+    <svg viewBox="0 0 1200 34" preserveAspectRatio="none">
+      <defs></defs>
+      <g>
+        <!-- garland string -->
+        <path d="M0,4 Q600,34 1200,4" stroke="#0F2A31" stroke-width="1.5" fill="none" opacity=".5"/>
+      </g>
+      <g id="flags"></g>
+    </svg>
+  </div>
+</section>
+
+<script>
+  // build a marigold-garland style bunting along the curve
+  (function(){
+    const ns="http://www.w3.org/2000/svg";
+    const g=document.querySelector('#flags');
+    if(!g) return;
+    const colors=["#E39A2E","#AE4A30","#EDEAD9","#1c5361"];
+    const n=34;
+    for(let i=0;i<=n;i++){
+      const t=i/n;
+      const x=t*1200;
+      const y=4 + Math.sin(Math.PI*t)*30;
+      const c=document.createElementNS(ns,"circle");
+      c.setAttribute("cx",x);
+      c.setAttribute("cy",y);
+      c.setAttribute("r", i%5===0 ? 4.2 : 3);
+      c.setAttribute("fill",colors[i%colors.length]);
+      g.appendChild(c);
+    }
+  })();
+</script>
+
+<section class="register-band" id="register">
+  <div class="wrap register-inner">
+    <div>
+      <h3>New student admissions are open</h3>
+      <p>Fill out the online registration form to begin the admission process for your child. It takes about five minutes.</p>
+    </div>
+    <a class="btn btn-onbrick" href="https://school-students-data.vercel.app" target="_blank" rel="noopener">Register a Student ↗</a>
+  </div>
+</section>
+
+<section class="pad" id="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <div class="about-figure">
+        <div class="cap mono">JITPUR HIGH SCHOOL · LICHUTALA CAMPUS</div>
+      </div>
+    </div>
+    <div class="about-body reveal">
+      <span class="sec-eyebrow">About the school</span>
+      <h2 style="margin-bottom:16px;">Rooted in Alipurduar, built for the future</h2>
+      <p>Jitpur High School (H.S.) has grown from a small neighbourhood school into a full Class 5-to-Grade-12 institution serving the children of Lichutala, Alipurduar and the surrounding areas. Our approach pairs steady academic discipline with genuine care for each student's wellbeing.</p>
+      <p>Classrooms are led by experienced teachers, supported by a curriculum that balances the state board syllabus with practical skills, sport and the arts. We believe a good school is judged not by the grandest building but by the students it sends into the world.</p>
+      <div class="pillars">
+        <div class="pillar"><h4>Discipline</h4><p>Clear routines and expectations, respectfully enforced.</p></div>
+        <div class="pillar"><h4>Curiosity</h4><p>Science labs, projects and questions encouraged, not just answers.</p></div>
+        <div class="pillar"><h4>Community</h4><p>Small class sizes and teachers who know every family.</p></div>
+        <div class="pillar"><h4>Character</h4><p>Sports, assemblies and service woven into school life.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chalk-section pad" id="academics">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Academics</span>
+      <h2>From first steps to final exams</h2>
+      <p>A single, continuous academic path — every level building toward the next in a supportive Bengali medium environment.</p>
+    </div>
+    <div class="levels">
+      <div class="level-card reveal">
+        <div class="tag">Class 5 – Grade 8</div>
+        <h3>Upper Primary</h3>
+        <ul>
+          <li>Foundational learning &amp; growth</li>
+          <li>Bengali medium instruction</li>
+          <li>Art, music and physical play</li>
+          <li>Small, nurturing classrooms</li>
+        </ul>
+      </div>
+      <div class="level-card reveal">
+        <div class="tag">Grade 9 – Grade 10</div>
+        <h3>Secondary School</h3>
+        <ul>
+          <li>Full subject curriculum incl. Science &amp; Maths</li>
+          <li>Computer literacy training</li>
+          <li>Madhyamik board-exam preparation</li>
+          <li>Debate, sports &amp; house competitions</li>
+        </ul>
+      </div>
+      <div class="level-card reveal">
+        <div class="tag">Grade 11 – Grade 12</div>
+        <h3>Higher Secondary (H.S.)</h3>
+        <ul>
+          <li>Arts stream</li>
+          <li>Commerce stream</li>
+          <li>Science stream</li>
+          <li>College &amp; career counselling</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="facilities">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Facilities</span>
+      <h2>What's on campus</h2>
+      <p>Everyday spaces that support learning, health and play.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="facility-grid reveal">
+      <div class="facility">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19.5V6.5A2.5 2.5 0 0 1 6.5 4H20v15.5H6.5A2.5 2.5 0 0 0 4 19.5Z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></svg>
+        <h4>Library</h4><p>A quiet reading hall with reference and story books for every grade.</p>
+      </div>
+      <div class="facility">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3v6l-6 9a2 2 0 0 0 2 3h14a2 2 0 0 0 2-3l-6-9V3"/><path d="M8.5 3h7"/><path d="M8 14h8"/></svg>
+        <h4>Science Lab</h4><p>Hands-on Physics, Chemistry and Biology practicals.</p>
+      </div>
+      <div class="facility">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 21h8"/><path d="M12 16v5"/></svg>
+        <h4>Computer Lab</h4><p>Basic computing and digital literacy for students.</p>
+      </div>
+      <div class="facility">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18"/></svg>
+        <h4>Playground</h4><p>Open grounds for football, volleyball and daily assembly.</p>
+      </div>
+      <div class="facility">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6.5 5.5 5.5 0 0 1 21.5 12c-2.5 4.5-9.5 9-9.5 9Z"/></svg>
+        <h4>Health Room</h4><p>First-aid and basic care available during school hours.</p>
+      </div>
+      <div class="facility">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h16v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9Z"/><path d="M9 21v-6h6v6"/><path d="M2 10 12 3l10 7"/></svg>
+        <h4>Canteen</h4><p>Simple, affordable meals and snacks for students.</p>
+      </div>
+      <div class="facility">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 12 4l9 5-9 5-9-5Z"/><path d="M7 11.5V17c0 1.5 2.5 3 5 3s5-1.5 5-3v-5.5"/></svg>
+        <h4>Auditorium</h4><p>Hall for assemblies, functions and cultural programs.</p>
+      </div>
+      <div class="facility">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+        <h4>Classrooms</h4><p>Well-lit rooms sized for focused, manageable class groups.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad band-line" id="notices" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Notice board</span>
+      <h2>Pinned this week</h2>
+      <p>Announcements from the school office.</p>
+    </div>
+    <div class="board reveal">
+      <div class="board-grid">
+        <div class="pin-card">
+          <div class="date mono">18 JULY 2026</div>
+          <h4>Admissions Open</h4>
+          <p>New student registration for the upcoming session is now open online. <a class="inline-link" href="https://school-students-data.vercel.app" target="_blank" rel="noopener">Register here ↗</a></p>
+        </div>
+        <div class="pin-card">
+          <div class="date mono">UPCOMING</div>
+          <h4>Parent–Teacher Meeting</h4>
+          <p>Grade-wise meeting schedules will be shared with class teachers. Please check with your ward's class teacher.</p>
+        </div>
+        <div class="pin-card">
+          <div class="date mono">REMINDER</div>
+          <h4>Uniform &amp; ID Cards</h4>
+          <p>All students are requested to wear the full school uniform and carry their ID card on campus.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="gallery">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Campus life</span>
+      <h2>Around the school</h2>
+      <p>Snapshots from classrooms, assemblies and the playground.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="g-tile g1 t1"><span>Morning Assembly</span></div>
+      <div class="g-tile t2"><span>Science Fair</span></div>
+      <div class="g-tile t3"><span>Sports Day</span></div>
+      <div class="g-tile t4"><span>Library Hour</span></div>
+      <div class="g-tile t5"><span>Cultural Program</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad band-line" id="contact" style="background:var(--paper-2);">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="sec-eyebrow">Contact</span>
+      <h2 style="margin-bottom:22px;">Visit or reach us</h2>
+      <div class="info-row"><div class="k">Address</div><div class="v">Jitpur High School (H.S.), Lichutala, Alipurduar, West Bengal 736123</div></div>
+      <div class="info-row"><div class="k">Phone</div><div class="v">+91-XX-XXXXXX</div></div>
+      <div class="info-row"><div class="k">Email</div><div class="v">info@jitpurhighschool.in</div></div>
+      <div class="info-row"><div class="k">Office hours</div><div class="v">Monday – Saturday, 10:00 AM – 4:00 PM</div></div>
+      <div class="hero-actions" style="margin-top:26px;">
+        <a class="btn btn-ghost" href="https://school-students-data.vercel.app" target="_blank" rel="noopener">Student Registration ↗</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="map-box">
+        <div class="map-pin"></div>
+        <div class="map-cap mono">LICHUTALA · CAMPUS LOCATION</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h5>Jitpur High School (H.S.)</h5>
+        <p style="font-size:13.5px;max-width:320px;color:rgba(237,234,217,.65);">Class 5 to Grade 12, serving the students of Alipurduar with steady academics and genuine care.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#about">About the school</a></li>
+          <li><a href="#academics">Academics</a></li>
+          <li><a href="#facilities">Facilities</a></li>
+          <li><a href="#notices">Notice board</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Admissions</h5>
+        <ul>
+          <li><a href="https://school-students-data.vercel.app" target="_blank" rel="noopener">Student registration ↗</a></li>
+          <li><a href="#contact">Contact the office</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Jitpur High School (H.S.). All rights reserved.</div>
+      <div>Alipurduar, West Bengal</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  const toggle=document.getElementById('navtoggle');
+  const links=document.getElementById('navlinks');
+  toggle.addEventListener('click',()=>links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+  // scroll reveal
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>

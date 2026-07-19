@@ -364,22 +364,29 @@
     .foot-grid{grid-template-columns:1fr;gap:26px;}
   }
   @media (max-width:760px){
-    /* Dropdown visible with dark background and light text on phones & tablets */
+    /* Dropdown visible with dark, fully opaque background and light text on phones & tablets */
     .navlinks{
       position:fixed;inset:64px 0 0 0;
       background:var(--deep-2);
+      opacity:1;
+      z-index:60;
       flex-direction:column;align-items:flex-start;padding:28px;gap:20px;
       transform:translateX(100%);transition:transform .3s ease;border-top:1px solid var(--line);
     }
-    .navlinks a {
-      color: var(--paper);
+    .navlinks a,
+    .navlinks a:link,
+    .navlinks a:visited {
+      color: var(--paper) !important;
       font-size: 16px;
       width: 100%;
       padding: 8px 0;
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
+    .navlinks a::after{
+      display:none;
+    }
     .navlinks .btn-ghost {
-      color: var(--marigold);
+      color: var(--marigold) !important;
       border-color: var(--marigold);
       width: 100%;
       justify-content: center;
@@ -387,13 +394,14 @@
     }
     .navlinks .btn-ghost:hover {
       background: var(--marigold);
-      color: var(--deep-2);
+      color: var(--deep-2) !important;
     }
     .navlinks.open{transform:translateX(0);}
     .navtoggle{
       display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;
+      position:relative;z-index:70;
     }
-    .navtoggle span{width:22px;height:2px;background:var(--deep-2);}
+    .navtoggle span{width:22px;height:2px;background:var(--deep-2);transition:background .2s ease;}
     .register-inner{flex-direction:column;align-items:flex-start;}
   }
   @media (max-width:600px){
@@ -511,11 +519,11 @@
     </div>
     <div class="about-body reveal">
       <span class="sec-eyebrow">আমাদের কথা</span>
-      <h2 style="margin-bottom:16px;">আলিপুরদুয়ারের বুকে গড়ে ওঠা ভবিষ্যতের ঠিকানা</h2>
-      <p>জিতপুর হাই স্কুল (এইচ.এস.) লিচুতলা, আলিপুরদুয়ার এবং তার পার্শ্ববর্তী এলাকার ছাত্রছাত্রীদের সেবা করে একটি সম্পূর্ণ পঞ্চম থেকে দ্বাদশ শ্রেণীর প্রতিষ্ঠানে পরিণত হয়েছে। আমাদের লক্ষ্য হলো পড়াশোনার শৃঙ্খলার পাশাপাশি প্রতিটি শিক্ষার্থীর সার্বিক যত্ন নেওয়া।</p>
-      <p>অভিজ্ঞ শিক্ষক-শিক্ষিকাদের পরিচালনায় আমাদের পাঠ্যক্রম রাজ্য বোর্ডের সিলেবাসের সাথে সাথে ব্যবহারিক দক্ষতা, খেলাধুলা এবং সংস্কৃতির সামঞ্জস্য বজায় রাখে। আমরা বিশ্বাস করি একটি ভালো স্কুলের বিচার তার বড় বিল্ডিং দিয়ে নয়, বরং তার আদর্শ ছাত্রছাত্রীদের দিয়ে হয়।</p>
+      <h2 style="margin-bottom:16px;">আলিপুরদুয়ারের বুকে গড়ে ওঠা ভবিষ্যতের ঠিকানা</h2>
+      <p>জিতপুর হাই স্কুল (এইচ.এস.) লিচুতলা, আলিপুরদুয়ার এবং তার পার্শ্ববর্তী এলাকার ছাত্রছাত্রীদের সেবা করে একটি সম্পূর্ণ পঞ্চম থেকে দ্বাদশ শ্রেণীর প্রতিষ্ঠানে পরিণত হয়েছে। আমাদের লক্ষ্য হলো পড়াশোনার শৃঙ্খলার পাশাপাশি প্রতিটি শিক্ষার্থীর সার্বিক যত্ন নেওয়া।</p>
+      <p>অভিজ্ঞ শিক্ষক-শিক্ষিকাদের পরিচালনায় আমাদের পাঠ্যক্রম রাজ্য বোর্ডের সিলেবাসের সাথে সাথে ব্যবহারিক দক্ষতা, খেলাধুলা এবং সংস্কৃতির সামঞ্জস্য বজায় রাখে। আমরা বিশ্বাস করি একটি ভালো স্কুলের বিচার তার বড় বিল্ডিং দিয়ে নয়, বরং তার আদর্শ ছাত্রছাত্রীদের দিয়ে হয়।</p>
       <div class="pillars">
-        <div class="pillar"><h4>শৃঙ্খলা</h4><p>নিয়মকানুন ও দায়িত্ববোধের প্রতি বিশেষ নজর দেওয়া।</p></div>
+        <div class="pillar"><h4>শৃঙ্খলা</h4><p>নিয়মকানুন ও দায়িত্ববোধের প্রতি বিশেষ নজর দেওয়া।</p></div>
         <div class="pillar"><h4>কৌতূহল</h4><p>বিজ্ঞান ল্যাব ও বিভিন্ন প্রজেক্টের মাধ্যমে প্রশ্নের উত্তর খোঁজা।</p></div>
         <div class="pillar"><h4>সমাজ</h4><p>ছোট ক্লাসের পরিবেশ এবং প্রতিটি পরিবারের সাথে সুসম্পর্ক।</p></div>
         <div class="pillar"><h4>চরিত্র গঠন</h4><p>খেলাধুলা, প্রার্থনা সভা ও সমাজসেবাকে জীবনের অংশ করা।</p></div>
